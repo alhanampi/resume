@@ -23,7 +23,7 @@ export const SectionLabel = styled.div`
   display: flex;
   align-items: center;
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.03em;
   color: ${(p) => p.theme.fg2};
@@ -61,7 +61,7 @@ export const Heading = styled.h2`
 
 export const Lead = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 15px;
+  font-size: 17px;
   color: ${(p) => p.theme.fg2};
   line-height: 1.7;
   max-width: 480px;
@@ -93,7 +93,7 @@ export const ContactRow = styled.a`
 
 export const ContactLabel = styled.span`
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -104,7 +104,7 @@ export const ContactLabel = styled.span`
 
 export const ContactValue = styled.span`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 14px;
+  font-size: 16px;
   color: ${(p) => p.theme.fg};
   letter-spacing: 0.01em;
 `
@@ -116,7 +116,7 @@ export const Arrow = styled.span`
 
 export const Footer = styled.p`
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
+  font-size: 12px;
   color: ${(p) => p.theme.fg2};
   margin-top: 80px;
   letter-spacing: 0.04em;

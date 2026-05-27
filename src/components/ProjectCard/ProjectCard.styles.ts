@@ -125,7 +125,7 @@ export const InfoSide = styled.div`
 
 export const CardTitle = styled.h3`
   font-family: ${(p) => p.theme.fontDisplay};
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: ${(p) => p.theme.fg};
   margin-bottom: 12px;
@@ -134,7 +134,7 @@ export const CardTitle = styled.h3`
 
 export const CardDesc = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.65;
   color: ${(p) => p.theme.fg2};
   margin-bottom: 24px;
@@ -150,7 +150,7 @@ export const Tags = styled.div`
 
 export const Tag = styled.span`
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.02em;
   color: rgba(249, 168, 212, 0.7);
@@ -173,7 +173,7 @@ export const ActionLink = styled.a<{ $primary?: boolean }>`
   padding: 10px 0;
   border-radius: 2px;
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
+  font-size: 12px;
   font-weight: ${(p) => (p.$primary ? 500 : 400)};
   letter-spacing: 0.04em;
   transition:

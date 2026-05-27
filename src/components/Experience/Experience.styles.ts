@@ -15,7 +15,7 @@ export const SectionLabel = styled.div`
   display: flex;
   align-items: center;
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.03em;
   color: ${(p) => p.theme.fg2};
@@ -42,7 +42,7 @@ export const Num = styled.span`
 
 export const Heading = styled.h2`
   font-family: ${(p) => p.theme.fontDisplay};
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(36px, 4vw, 56px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.fg};
@@ -52,7 +52,7 @@ export const Heading = styled.h2`
 
 export const Lead = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 15px;
+  font-size: 17px;
   color: ${(p) => p.theme.fg2};
   margin-bottom: 64px;
   max-width: 520px;
@@ -92,7 +92,7 @@ export const TitleRow = styled.div`
 
 export const Company = styled.span<{ $open: boolean }>`
   font-family: ${(p) => p.theme.fontDisplay};
-  font-size: clamp(20px, 2.4vw, 28px);
+  font-size: clamp(22px, 2.4vw, 30px);
   font-weight: 700;
   color: ${(p) => (p.$open ? p.theme.accent : p.theme.fg)};
   letter-spacing: -0.01em;
@@ -101,14 +101,14 @@ export const Company = styled.span<{ $open: boolean }>`
 
 export const Role = styled.span`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   color: ${(p) => p.theme.fg2};
 `
 
 export const Summary = styled.p<{ $hidden: boolean }>`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 13px;
+  font-size: 14px;
   color: ${(p) => p.theme.fg2};
   margin-top: 2px;
   display: ${(p) => (p.$hidden ? 'none' : 'block')};
@@ -123,7 +123,7 @@ export const ToggleRight = styled.div`
 
 export const Period = styled.span`
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
+  font-size: 12px;
   color: ${(p) => p.theme.fg2};
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -160,7 +160,7 @@ export const Bullet = styled.li`
   display: flex;
   gap: 12px;
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.65;
   color: ${(p) => p.theme.fg2};
   padding-right: 40px;
@@ -174,7 +174,7 @@ export const BulletArrow = styled.span`
 
 export const StackLine = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 12px;
+  font-size: 13px;
   color: ${(p) => p.theme.fg2};
   border-top: 1px solid ${(p) => p.theme.border};
   padding-top: 16px;

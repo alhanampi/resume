@@ -70,7 +70,7 @@ export const SubtitleArea = styled.div<{ $visible: boolean }>`
 
 export const Subtitle = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: clamp(13px, 1.4vw, 16px);
+  font-size: clamp(15px, 1.6vw, 18px);
   font-weight: 400;
   color: ${(p) => p.theme.fg2};
   letter-spacing: 0.01em;
@@ -92,7 +92,7 @@ export const LinkButton = styled.a`
   border: 1px solid ${(p) => p.theme.border};
   border-radius: 2px;
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 400;
   color: ${(p) => p.theme.fg2};
   letter-spacing: 0.03em;

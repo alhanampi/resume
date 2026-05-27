@@ -41,7 +41,7 @@ export const LinkList = styled.ul`
 
 export const NavLink = styled.a<{ $active: boolean }>`
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.02em;
   color: ${(p) => (p.$active ? p.theme.accent : p.theme.fg2)};

@@ -21,7 +21,7 @@ export const SectionLabel = styled.div`
   align-items: center;
   gap: 0;
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.03em;
   color: ${(p) => p.theme.fg2};
@@ -48,7 +48,7 @@ export const Num = styled.span`
 
 export const Heading = styled.h2`
   font-family: ${(p) => p.theme.fontDisplay};
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(36px, 4vw, 56px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.fg};
@@ -58,7 +58,7 @@ export const Heading = styled.h2`
 
 export const Lead = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 15px;
+  font-size: 17px;
   color: ${(p) => p.theme.fg2};
   margin-bottom: 64px;
   max-width: 540px;

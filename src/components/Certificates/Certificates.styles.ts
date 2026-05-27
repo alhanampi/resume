@@ -15,7 +15,7 @@ export const SectionLabel = styled.div`
   display: flex;
   align-items: center;
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.03em;
   color: ${(p) => p.theme.fg2};
@@ -42,7 +42,7 @@ export const Num = styled.span`
 
 export const Heading = styled.h2`
   font-family: ${(p) => p.theme.fontDisplay};
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(36px, 4vw, 56px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.fg};
@@ -52,7 +52,7 @@ export const Heading = styled.h2`
 
 export const Lead = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 15px;
+  font-size: 17px;
   color: ${(p) => p.theme.fg2};
   margin-bottom: 64px;
   max-width: 520px;
@@ -74,7 +74,7 @@ export const Column = styled.div``
 
 export const ColTitle = styled.h3`
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   color: ${(p) => p.theme.accent};
   margin-bottom: 28px;
@@ -104,7 +104,7 @@ export const CertLeft = styled.div``
 
 export const CertTitle = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: ${(p) => p.theme.fg};
   line-height: 1.4;
@@ -113,13 +113,13 @@ export const CertTitle = styled.p`
 
 export const CertIssuer = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 12px;
+  font-size: 13px;
   color: ${(p) => p.theme.fg2};
 `
 
 export const CertDate = styled.span`
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
+  font-size: 12px;
   color: ${(p) => p.theme.fg2};
   white-space: nowrap;
   letter-spacing: 0.02em;
@@ -142,7 +142,7 @@ export const EduLeft = styled.div``
 
 export const EduTitle = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   color: ${(p) => p.theme.fg};
   margin-bottom: 4px;
@@ -150,13 +150,13 @@ export const EduTitle = styled.p`
 
 export const EduInstitution = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 12px;
+  font-size: 13px;
   color: ${(p) => p.theme.fg2};
 `
 
 export const EduYear = styled.span<{ $inProgress: boolean }>`
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
+  font-size: 12px;
   color: ${(p) => (p.$inProgress ? p.theme.accent : p.theme.fg2)};
   white-space: nowrap;
   letter-spacing: 0.02em;
