@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import {
   SiReact,
   SiNextdotjs,
@@ -24,6 +25,7 @@ import {
 import type { IconType } from 'react-icons'
 
 import { skills } from '../../data/skills'
+import { fadeUp, fadeIn, stagger, viewport } from '../../animations/variants'
 
 import {
   Outer,
@@ -67,15 +69,25 @@ const ICON_MAP: Record<string, IconType> = {
 export default function Skills() {
   return (
     <Outer>
-      <Inner id="skills">
-        <SectionLabel>
-          <Slash>//</Slash>
-          <Num>&nbsp;03.</Num>&nbsp;stack
-        </SectionLabel>
-        <Heading>Technical Stack</Heading>
+      <Inner
+        id="skills"
+        variants={stagger}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+      >
+        <motion.div variants={fadeIn}>
+          <SectionLabel>
+            <Slash>//</Slash>
+            <Num>&nbsp;03.</Num>&nbsp;stack
+          </SectionLabel>
+        </motion.div>
+        <motion.div variants={fadeUp}>
+          <Heading>Technical Stack</Heading>
+        </motion.div>
         <CatList>
           {skills.map((cat) => (
-            <CategoryRow key={cat.label}>
+            <CategoryRow key={cat.label} variants={fadeUp}>
               <CatLabel>{cat.label}</CatLabel>
               <TagRow>
                 {cat.items.map((item) => {

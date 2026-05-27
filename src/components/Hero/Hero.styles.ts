@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from 'motion/react'
 
-export const Section = styled.section`
+export const Section = styled(motion.section)`
   position: relative;
   width: 100%;
   background: ${(p) => p.theme.bg};
@@ -11,7 +12,7 @@ export const Section = styled.section`
   }
 `
 
-export const CodeComment = styled.div`
+export const CodeComment = styled(motion.div)`
   padding-top: 32px;
   font-family: ${(p) => p.theme.fontMono};
   font-size: 12px;
@@ -24,12 +25,12 @@ export const CodeComment = styled.div`
   }
 `
 
-export const NameBlock = styled.div`
+export const NameBlock = styled(motion.div)`
   width: fit-content;
   padding-top: min(18vh, 140px);
 `
 
-export const NameLine = styled.span`
+export const NameLine = styled(motion.span)`
   display: block;
   font-family: ${(p) => p.theme.fontDisplay};
   font-size: clamp(48px, 14.8vw, 136px);
@@ -40,18 +41,19 @@ export const NameLine = styled.span`
   white-space: nowrap;
 `
 
-export const NameUnderline = styled.div`
+export const NameUnderline = styled(motion.div)`
   height: 1.5px;
   width: 100%;
   background: ${(p) => p.theme.accent};
   margin-top: 28px;
+  transform-origin: left center;
 `
 
-export const ContentArea = styled.div`
+export const ContentArea = styled(motion.div)`
   padding: 48px 0 80px;
 `
 
-export const AvailableBadge = styled.div`
+export const AvailableBadge = styled(motion.div)`
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -61,10 +63,11 @@ export const AvailableBadge = styled.div`
   text-transform: uppercase;
   color: #4ade80;
   padding: 12px 0;
-  margin-bottom: 12px;
+  margin-bottom: 28px;
 `
 
-export const AvailableDot = styled.span`
+export const AvailableDot = styled(motion.span)`
+  display: block;
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -72,7 +75,7 @@ export const AvailableDot = styled.span`
   flex-shrink: 0;
 `
 
-export const Heading = styled.h1`
+export const Heading = styled(motion.h1)`
   font-family: ${(p) => p.theme.fontDisplay};
   font-size: clamp(28px, 3vw, 44px);
   font-weight: 700;
@@ -83,7 +86,7 @@ export const Heading = styled.h1`
   max-width: 720px;
 `
 
-export const Bio = styled.p`
+export const Bio = styled(motion.p)`
   font-family: ${(p) => p.theme.fontBody};
   font-size: clamp(15px, 1.6vw, 18px);
   color: ${(p) => p.theme.fg2};
@@ -92,7 +95,7 @@ export const Bio = styled.p`
   margin-bottom: 20px;
 `
 
-export const StatRow = styled.div`
+export const StatRow = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -100,7 +103,7 @@ export const StatRow = styled.div`
   margin-bottom: 32px;
 `
 
-export const Stat = styled.div`
+export const Stat = styled(motion.div)`
   font-family: ${(p) => p.theme.fontMono};
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -116,7 +119,7 @@ export const Stat = styled.div`
   }
 `
 
-export const LinkRow = styled.div`
+export const LinkRow = styled(motion.div)`
   display: flex;
   gap: 10px;
   flex-wrap: wrap;

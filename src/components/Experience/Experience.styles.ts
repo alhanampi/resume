@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from 'motion/react'
 
-export const Section = styled.section`
+export const Section = styled(motion.section)`
   border-top: 1px solid ${(p) => p.theme.border};
   padding: 112px 64px;
   max-width: 1200px;
@@ -76,7 +77,7 @@ export const List = styled.div`
   }
 `
 
-export const Item = styled.div<{ $last: boolean; $open: boolean }>`
+export const Item = styled(motion.div)<{ $last: boolean; $open: boolean }>`
   border-top: 1px solid ${(p) => p.theme.border};
   border-bottom: ${(p) => (p.$last ? `1px solid ${p.theme.border}` : 'none')};
   position: relative;
@@ -165,12 +166,6 @@ export const PlusIcon = styled.span<{ $open: boolean }>`
   display: inline-block;
   transition: transform 0.2s;
   transform: ${(p) => (p.$open ? 'rotate(45deg)' : 'none')};
-`
-
-export const Details = styled.div<{ $open: boolean }>`
-  overflow: hidden;
-  max-height: ${(p) => (p.$open ? '600px' : '0')};
-  transition: max-height 0.35s ease;
 `
 
 export const DetailsInner = styled.div`

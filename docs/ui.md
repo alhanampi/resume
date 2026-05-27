@@ -66,22 +66,22 @@ const ActionLink = styled.a<{ $primary?: boolean }>`
 
 ## Animations
 
-Define animations with `keyframes` from `styled-components`, not with `@keyframes` in `GlobalStyles`.
+This project uses **Motion** (`motion/react`) for all non-trivial animations. See [`docs/animations.md`](animations.md) for the full standard.
+
+**When to use Motion vs CSS:**
+- **Motion** — scroll-triggered reveals, enter/exit transitions, hover lifts, accordions
+- **CSS transitions** — color changes, border changes, opacity on `:hover` — anything driven by a CSS pseudo-class
+
+To animate a styled component, extend a motion element:
 
 ```ts
-import styled, { keyframes } from 'styled-components'
+import { motion } from 'motion/react'
 
-const fadeUp = keyframes`
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-`
-
-const Box = styled.div`
-  animation: ${fadeUp} 0.6s ease forwards;
-`
+export const Section = styled(motion.section)`...`
+export const Card = styled(motion.article)`...`
 ```
 
-Exception: `scrollPulse` is defined in `GlobalStyles` because it's used across multiple components via a named reference. Avoid adding more global keyframes — prefer colocated ones.
+CSS `keyframes` (via styled-components) are now reserved for ambient/looping effects not suited to Motion (there are currently none in this codebase). Do not add new styled-components `keyframes` for reveal animations — use Motion variants instead.
 
 ## Responsive breakpoints
 

@@ -2,11 +2,12 @@
 
 ## Project
 
-Pamina Goldenberg Thiery's portfolio site. Vite + React 18 + TypeScript, deployed to Vercel. Single-page app with a canvas hero (pretext), smooth-scroll sections, and no routing library.
+Pamina Goldenberg Thiery's portfolio site. Vite + React 18 + TypeScript, deployed to Vercel. Single-page app with smooth-scroll sections and no routing library.
 
 ## Stack
 
 - **Styling** — styled-components (sole styling mechanism; no Tailwind, no CSS Modules)
+- **Animations** — Motion (`motion/react`); shared variants in `src/animations/variants.ts`; see `docs/animations.md`
 - **Theme** — `src/styles/theme.ts` + `ThemeProvider` in `App.tsx`; always use theme tokens, never hardcode values
 - **Projects** — fetched live from GitHub pinned repos via `api/pinned.ts` (Vercel edge function); requires `GITHUB_TOKEN` env var in Vercel
 - **Other content** — static TypeScript files in `src/data/`; no database, no CMS
@@ -14,9 +15,11 @@ Pamina Goldenberg Thiery's portfolio site. Vite + React 18 + TypeScript, deploye
 
 ## Docs
 
-- [`docs/ui.md`](docs/ui.md) — styled-components standards: theme tokens, transient props, fonts, breakpoints, keyframes
+- [`docs/ui.md`](docs/ui.md) — styled-components standards: theme tokens, transient props, fonts, breakpoints
 - [`docs/components.md`](docs/components.md) — component conventions: section vs. leaf, how to add a section, state rules
 - [`docs/data.md`](docs/data.md) — content layer: src/data/ conventions, how to add projects or new categories
+- [`docs/animations.md`](docs/animations.md) — Motion (framer-motion) standards: variants, whileInView, AnimatePresence, best practices
+- [`docs/clean-code.md`](docs/clean-code.md) — general code quality and style guidelines
 
 ## Commands
 

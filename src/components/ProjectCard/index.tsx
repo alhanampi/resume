@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import type { Project } from '../../utils/types'
 
 import {
@@ -27,14 +25,8 @@ interface Props {
 }
 
 export default function ProjectCard({ project, index }: Props) {
-  const [hovered, setHovered] = useState(false)
-
   return (
-    <Card
-      $hovered={hovered}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+    <Card whileHover={{ y: -4 }} transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}>
       <PreviewSide>
         <Chrome>
           <ChromeDots>

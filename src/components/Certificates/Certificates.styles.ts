@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from 'motion/react'
 
-export const Section = styled.section`
+export const Section = styled(motion.section)`
   border-top: 1px solid ${(p) => p.theme.border};
   padding: 112px 64px;
   max-width: 1200px;
@@ -70,7 +71,7 @@ export const Grid = styled.div`
   }
 `
 
-export const Column = styled.div``
+export const Column = styled(motion.div)``
 
 export const ColTitle = styled.h3`
   font-family: ${(p) => p.theme.fontMono};
@@ -87,7 +88,7 @@ export const List = styled.ul`
   flex-direction: column;
 `
 
-export const CertItem = styled.li`
+export const CertItem = styled(motion.li)`
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: baseline;
@@ -125,7 +126,7 @@ export const CertDate = styled.span`
   letter-spacing: 0.02em;
 `
 
-export const EduItem = styled.li`
+export const EduItem = styled(motion.li)`
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: baseline;

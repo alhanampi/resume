@@ -1,11 +1,7 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
+import { motion } from 'motion/react'
 
-const shimmer = keyframes`
-  0%   { background-position: -600px 0; }
-  100% { background-position:  600px 0; }
-`
-
-export const Section = styled.section`
+export const Section = styled(motion.section)`
   border-top: 1px solid ${(p) => p.theme.border};
   padding: 112px 64px;
   max-width: 1200px;
@@ -65,22 +61,8 @@ export const Lead = styled.p`
   line-height: 1.7;
 `
 
-export const Grid = styled.div`
+export const Grid = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 24px;
-`
-
-export const SkeletonCard = styled.div`
-  height: 320px;
-  border-radius: 3px;
-  border: 1px solid ${(p) => p.theme.border};
-  background: linear-gradient(
-    90deg,
-    ${(p) => p.theme.card} 25%,
-    ${(p) => p.theme.border} 50%,
-    ${(p) => p.theme.card} 75%
-  );
-  background-size: 1200px 100%;
-  animation: ${shimmer} 1.8s ease-in-out infinite;
 `

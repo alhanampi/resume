@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
 
 import { experience } from '../../data/experience'
+import { fadeUp, fadeIn, stagger, viewport } from '../../animations/variants'
 import {
   Section,
   SectionLabel,
@@ -19,7 +21,6 @@ import {
   ToggleRight,
   Period,
   PlusIcon,
-  Details,
   DetailsInner,
   Bullets,
   Bullet,
@@ -28,27 +29,48 @@ import {
   StackAccent,
 } from './Experience.styles'
 
+const panelVariants = {
+  closed: { height: 0, opacity: 0 },
+  open: {
+    height: 'auto',
+    opacity: 1,
+    transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] as const },
+  },
+}
+
 export default function Experience() {
   const [expanded, setExpanded] = useState<string | null>('GlobalLogic-0')
 
   return (
-    <Section id="experience">
-      <SectionLabel>
-        <Slash>//</Slash>
-        <Num>&nbsp;04.</Num>&nbsp;experience
-      </SectionLabel>
-      <Heading>Work History</Heading>
-      <Lead>
-        6+ years across fintech, banking, AI platforms, and education — building and shipping at
-        scale.
-      </Lead>
+    <Section
+      id="experience"
+      variants={stagger}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+    >
+      <motion.div variants={fadeIn}>
+        <SectionLabel>
+          <Slash>//</Slash>
+          <Num>&nbsp;04.</Num>&nbsp;experience
+        </SectionLabel>
+      </motion.div>
+      <motion.div variants={fadeUp}>
+        <Heading>Work History</Heading>
+      </motion.div>
+      <motion.div variants={fadeUp}>
+        <Lead>
+          6+ years across fintech, banking, AI platforms, and education — building and shipping at
+          scale.
+        </Lead>
+      </motion.div>
 
       <List>
         {experience.map((job, i) => {
           const key = `${job.company}-${i}`
           const isOpen = expanded === key
           return (
-            <Item key={key} $last={i === experience.length - 1} $open={isOpen}>
+            <Item key={key} $last={i === experience.length - 1} $open={isOpen} variants={fadeUp}>
               <Toggle onClick={() => setExpanded(isOpen ? null : key)}>
                 <ToggleLeft>
                   <TitleRow>
@@ -62,23 +84,35 @@ export default function Experience() {
                   <PlusIcon $open={isOpen}>+</PlusIcon>
                 </ToggleRight>
               </Toggle>
-              <Details $open={isOpen}>
-                <DetailsInner>
-                  <Bullets>
-                    {job.bullets.map((b, bi) => (
-                      <Bullet key={bi}>
-                        <BulletArrow>▸</BulletArrow>
-                        {b}
-                      </Bullet>
-                    ))}
-                  </Bullets>
-                  {job.stack && (
-                    <StackLine>
-                      <StackAccent>Stack:</StackAccent> {job.stack}
-                    </StackLine>
-                  )}
-                </DetailsInner>
-              </Details>
+
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    key="details"
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
+                    variants={panelVariants}
+                    style={{ overflow: 'hidden' }}
+                  >
+                    <DetailsInner>
+                      <Bullets>
+                        {job.bullets.map((b, bi) => (
+                          <Bullet key={bi}>
+                            <BulletArrow>▸</BulletArrow>
+                            {b}
+                          </Bullet>
+                        ))}
+                      </Bullets>
+                      {job.stack && (
+                        <StackLine>
+                          <StackAccent>Stack:</StackAccent> {job.stack}
+                        </StackLine>
+                      )}
+                    </DetailsInner>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </Item>
           )
         })}
