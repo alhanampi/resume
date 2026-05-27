@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 
 history.scrollRestoration = 'manual'
+if (window.location.hash) {
+  history.replaceState(null, '', window.location.pathname + window.location.search)
+}
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

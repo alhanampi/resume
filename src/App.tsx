@@ -15,6 +15,7 @@ export default function App() {
   useEffect(() => {
     window.scrollTo(0, 0)
     const lenis = new Lenis({ duration: 1.2, easing: (t) => 1 - Math.pow(1 - t, 4) })
+    lenis.scrollTo(0, { immediate: true })
     let raf: number
     const loop = (time: number) => {
       lenis.raf(time)
