@@ -9,6 +9,9 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 16px;
+    scroll-behavior: auto;
+    scroll-padding-top: 72px;
+    overflow-anchor: none;
   }
 
   body {

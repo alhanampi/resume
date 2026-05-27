@@ -10,7 +10,6 @@ import {
   Dot,
   UrlBar,
   Preview,
-  PreviewIframe,
   PreviewFallback,
   IndexBadge,
   InfoSide,
@@ -28,7 +27,6 @@ interface Props {
 }
 
 export default function ProjectCard({ project, index }: Props) {
-  const [iframeError, setIframeError] = useState(false)
   const [hovered, setHovered] = useState(false)
 
   return (
@@ -48,17 +46,9 @@ export default function ProjectCard({ project, index }: Props) {
         </Chrome>
 
         <Preview>
-          {!iframeError ? (
-            <PreviewIframe
-              src={project.liveUrl}
-              title={project.name}
-              onError={() => setIframeError(true)}
-            />
-          ) : (
-            <PreviewFallback>
-              <span style={{ fontSize: 24, opacity: 0.2 }}>◇</span>preview unavailable
-            </PreviewFallback>
-          )}
+          <PreviewFallback>
+            <span style={{ fontSize: 24, opacity: 0.2 }}>◇</span>preview unavailable
+          </PreviewFallback>
           <IndexBadge>{String(index + 1).padStart(2, '0')}</IndexBadge>
         </Preview>
       </PreviewSide>

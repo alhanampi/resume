@@ -1,14 +1,9 @@
 import styled from 'styled-components'
 
-export const Outer = styled.div<{ $visible: boolean }>`
+export const Outer = styled.div`
   background: ${(p) => p.theme.bg2};
   border-top: 1px solid ${(p) => p.theme.border};
   border-bottom: 1px solid ${(p) => p.theme.border};
-  opacity: ${(p) => (p.$visible ? 1 : 0)};
-  transform: ${(p) => (p.$visible ? 'translateY(0)' : 'translateY(32px)')};
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
 `
 
 export const Inner = styled.section`
@@ -52,7 +47,7 @@ export const Num = styled.span`
 
 export const Heading = styled.h2`
   font-family: ${(p) => p.theme.fontDisplay};
-  font-size: clamp(36px, 4vw, 56px);
+  font-size: clamp(42px, 4.5vw, 64px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.fg};

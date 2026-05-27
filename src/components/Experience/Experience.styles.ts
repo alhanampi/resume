@@ -1,15 +1,10 @@
 import styled from 'styled-components'
 
-export const Section = styled.section<{ $visible: boolean }>`
+export const Section = styled.section`
   border-top: 1px solid ${(p) => p.theme.border};
   padding: 112px 64px;
   max-width: 1200px;
   margin: 0 auto;
-  opacity: ${(p) => (p.$visible ? 1 : 0)};
-  transform: ${(p) => (p.$visible ? 'translateY(0)' : 'translateY(32px)')};
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
 
   @media (max-width: 768px) {
     padding: 72px 24px;
@@ -47,7 +42,7 @@ export const Num = styled.span`
 
 export const Heading = styled.h2`
   font-family: ${(p) => p.theme.fontDisplay};
-  font-size: clamp(36px, 4vw, 56px);
+  font-size: clamp(42px, 4.5vw, 64px);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: ${(p) => p.theme.fg};
@@ -57,7 +52,7 @@ export const Heading = styled.h2`
 
 export const Lead = styled.p`
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 17px;
+  font-size: 19px;
   color: ${(p) => p.theme.fg2};
   margin-bottom: 64px;
   max-width: 520px;
@@ -194,7 +189,7 @@ export const Bullet = styled.li`
   display: flex;
   gap: 12px;
   font-family: ${(p) => p.theme.fontBody};
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   color: ${(p) => p.theme.fg2};
   padding-right: 40px;

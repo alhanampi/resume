@@ -1,8 +1,6 @@
 import { useState } from 'react'
 
 import { experience } from '../../data/experience'
-import { useInView } from '../../hooks/useInView'
-
 import {
   Section,
   SectionLabel,
@@ -31,14 +29,13 @@ import {
 } from './Experience.styles'
 
 export default function Experience() {
-  const [ref, visible] = useInView()
   const [expanded, setExpanded] = useState<string | null>('GlobalLogic-0')
 
   return (
-    <Section ref={ref} id="experience" $visible={visible}>
+    <Section id="experience">
       <SectionLabel>
         <Slash>//</Slash>
-        <Num>&nbsp;03.</Num>&nbsp;experience
+        <Num>&nbsp;04.</Num>&nbsp;experience
       </SectionLabel>
       <Heading>Work History</Heading>
       <Lead>

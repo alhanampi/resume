@@ -1,32 +1,67 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
-const fadeUp = keyframes`
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
+export const Section = styled.section`
+  position: relative;
+  width: 100%;
+  background: ${(p) => p.theme.bg};
+  padding: 0 64px;
+
+  @media (max-width: 600px) {
+    padding: 0 24px;
+  }
 `
 
-export const pulseLine = keyframes`
-  0%, 100% { opacity: 1; transform: scaleY(1); }
-  50%       { opacity: 0.2; transform: scaleY(0.45); }
+export const CodeComment = styled.div`
+  padding-top: 32px;
+  font-family: ${(p) => p.theme.fontMono};
+  font-size: 12px;
+  font-weight: 400;
+  color: ${(p) => p.theme.fg2};
+  letter-spacing: 0.02em;
+
+  span {
+    color: ${(p) => p.theme.accent};
+  }
 `
 
-const availablePulse = keyframes`
-  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
-  50%       { box-shadow: 0 0 0 5px rgba(74, 222, 128, 0); }
+export const NameBlock = styled.div`
+  width: fit-content;
+  padding-top: min(18vh, 140px);
 `
 
-export { fadeUp }
+export const NameLine = styled.span`
+  display: block;
+  font-family: ${(p) => p.theme.fontDisplay};
+  font-size: clamp(48px, 14.8vw, 136px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: ${(p) => p.theme.fg};
+  line-height: 1.13;
+  white-space: nowrap;
+`
+
+export const NameUnderline = styled.div`
+  height: 1.5px;
+  width: 100%;
+  background: ${(p) => p.theme.accent};
+  margin-top: 28px;
+`
+
+export const ContentArea = styled.div`
+  padding: 48px 0 80px;
+`
 
 export const AvailableBadge = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 20px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #4ade80;
-  margin-bottom: 20px;
+  padding: 12px 0;
+  margin-bottom: 12px;
 `
 
 export const AvailableDot = styled.span`
@@ -35,74 +70,50 @@ export const AvailableDot = styled.span`
   border-radius: 50%;
   background: #4ade80;
   flex-shrink: 0;
-  animation: ${availablePulse} 2s ease-in-out infinite;
 `
 
-export const Section = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100dvh;
-  min-height: 560px;
-  overflow: hidden;
-  background: ${(p) => p.theme.bg};
+export const Heading = styled.h1`
+  font-family: ${(p) => p.theme.fontDisplay};
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: ${(p) => p.theme.fg};
+  margin-bottom: 24px;
+  line-height: 1.1;
+  max-width: 720px;
 `
 
-export const CodeComment = styled.div`
-  position: absolute;
-  top: 96px;
-  left: 64px;
+export const Bio = styled.p`
+  font-family: ${(p) => p.theme.fontBody};
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: ${(p) => p.theme.fg2};
+  line-height: 1.75;
+  max-width: 620px;
+  margin-bottom: 20px;
+`
+
+export const StatRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+  margin-bottom: 32px;
+`
+
+export const Stat = styled.div`
   font-family: ${(p) => p.theme.fontMono};
   font-size: 12px;
-  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: ${(p) => p.theme.fg2};
-  letter-spacing: 0.02em;
-  z-index: 1;
+  border: 1px solid ${(p) => p.theme.border};
+  padding: 8px 16px;
+  border-radius: 2px;
 
   span {
     color: ${(p) => p.theme.accent};
+    margin-right: 8px;
   }
-
-  @media (max-width: 600px) {
-    left: 24px;
-    top: 80px;
-  }
-`
-
-export const Canvas = styled.canvas`
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-`
-
-export const SubtitleArea = styled.div<{ $visible: boolean }>`
-  position: absolute;
-  bottom: 56px;
-  left: 64px;
-  right: 64px;
-  z-index: 1;
-  opacity: ${(p) => (p.$visible ? 1 : 0)};
-  transform: ${(p) => (p.$visible ? 'translateY(0)' : 'translateY(18px)')};
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
-
-  @media (max-width: 600px) {
-    left: 24px;
-    right: 24px;
-    bottom: 60px;
-  }
-`
-
-export const Subtitle = styled.p`
-  font-family: ${(p) => p.theme.fontBody};
-  font-size: clamp(15px, 1.6vw, 18px);
-  font-weight: 400;
-  color: ${(p) => p.theme.fg2};
-  letter-spacing: 0.01em;
-  margin-bottom: 32px;
-  max-width: 520px;
-  line-height: 1.75;
 `
 
 export const LinkRow = styled.div`
@@ -132,35 +143,4 @@ export const LinkButton = styled.a`
     color: ${(p) => p.theme.accent};
     background: ${(p) => p.theme.accentDim};
   }
-`
-
-export const ScrollIndicator = styled.div<{ $visible: boolean }>`
-  position: absolute;
-  bottom: 24px;
-  left: 64px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  opacity: ${(p) => (p.$visible ? 0.35 : 0)};
-  transition: opacity 0.8s ease 0.5s;
-
-  @media (max-width: 600px) {
-    left: 24px;
-  }
-`
-
-export const ScrollLine = styled.div`
-  width: 1px;
-  height: 36px;
-  background: ${(p) => p.theme.fg2};
-  animation: ${pulseLine} 2s ease-in-out infinite;
-`
-
-export const ScrollLabel = styled.span`
-  font-family: ${(p) => p.theme.fontMono};
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: ${(p) => p.theme.fg2};
 `

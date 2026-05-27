@@ -1,13 +1,8 @@
 import styled from 'styled-components'
 
-export const Outer = styled.div<{ $visible: boolean }>`
+export const Outer = styled.div`
   background: ${(p) => p.theme.bg2};
   border-top: 1px solid ${(p) => p.theme.border};
-  opacity: ${(p) => (p.$visible ? 1 : 0)};
-  transform: ${(p) => (p.$visible ? 'translateY(0)' : 'translateY(32px)')};
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
 `
 
 export const Inner = styled.section`
