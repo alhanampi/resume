@@ -1,6 +1,4 @@
 import { certificates, education } from '../../data/certificates'
-import { useInView } from '../../hooks/useInView'
-
 import {
   Section,
   SectionLabel,
@@ -25,12 +23,11 @@ import {
 } from './Certificates.styles'
 
 export default function Certificates() {
-  const [ref, visible] = useInView()
   return (
-    <Section ref={ref} id="certificates" $visible={visible}>
+    <Section id="certificates">
       <SectionLabel>
         <Slash>//</Slash>
-        <Num>&nbsp;04.</Num>&nbsp;learning
+        <Num>&nbsp;05.</Num>&nbsp;learning
       </SectionLabel>
       <Heading>Certifications & Education</Heading>
       <Lead>

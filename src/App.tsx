@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './styles/theme'
 import { GlobalStyles } from './styles/GlobalStyles'
@@ -10,6 +11,8 @@ import Contact from './components/Contact'
 import Certificates from './components/Certificates'
 
 export default function App() {
+  useLayoutEffect(() => { window.scrollTo(0, 0) }, [])
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />

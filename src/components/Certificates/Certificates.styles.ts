@@ -1,15 +1,10 @@
 import styled from 'styled-components'
 
-export const Section = styled.section<{ $visible: boolean }>`
+export const Section = styled.section`
   border-top: 1px solid ${(p) => p.theme.border};
   padding: 112px 64px;
   max-width: 1200px;
   margin: 0 auto;
-  opacity: ${(p) => (p.$visible ? 1 : 0)};
-  transform: ${(p) => (p.$visible ? 'translateY(0)' : 'translateY(32px)')};
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
 
   @media (max-width: 768px) {
     padding: 72px 24px;

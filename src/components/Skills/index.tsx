@@ -24,7 +24,6 @@ import {
 import type { IconType } from 'react-icons'
 
 import { skills } from '../../data/skills'
-import { useInView } from '../../hooks/useInView'
 
 import {
   Outer,
@@ -66,14 +65,12 @@ const ICON_MAP: Record<string, IconType> = {
 }
 
 export default function Skills() {
-  const [ref, visible] = useInView()
-
   return (
-    <Outer ref={ref} $visible={visible}>
+    <Outer>
       <Inner id="skills">
         <SectionLabel>
           <Slash>//</Slash>
-          <Num>&nbsp;02.</Num>&nbsp;stack
+          <Num>&nbsp;03.</Num>&nbsp;stack
         </SectionLabel>
         <Heading>Technical Stack</Heading>
         <CatList>
