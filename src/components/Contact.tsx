@@ -138,7 +138,7 @@ export default function Contact() {
       <Inner id="contact">
         <SectionLabel>
           <Slash>//</Slash>
-          <Num>&nbsp;04.</Num>&nbsp;contact
+          <Num>&nbsp;05.</Num>&nbsp;contact
         </SectionLabel>
         <Heading>Let's build something great.</Heading>
         <Lead>
