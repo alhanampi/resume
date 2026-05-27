@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+import { motion } from 'motion/react'
 
 export const Outer = styled.div`
   background: ${(p) => p.theme.bg2};
   border-top: 1px solid ${(p) => p.theme.border};
 `
 
-export const Inner = styled.section`
+export const Inner = styled(motion.section)`
   max-width: 1200px;
   margin: 0 auto;
   padding: 112px 64px;
@@ -68,17 +69,17 @@ export const Lead = styled.p`
   margin-bottom: 56px;
 `
 
-export const ContactList = styled.div`
+export const ContactList = styled(motion.div)`
   display: flex;
   flex-direction: column;
   max-width: 480px;
 `
 
-export const ContactRow = styled.a`
+export const ContactRow = styled(motion.a)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 0 18px 0;
+  padding: 18px 0;
   border-bottom: 1px solid ${(p) => p.theme.border};
   transition: padding-left 0.2s;
 
@@ -114,7 +115,7 @@ export const Arrow = styled.span`
   font-size: 14px;
 `
 
-export const Footer = styled.p`
+export const Footer = styled(motion.p)`
   font-family: ${(p) => p.theme.fontMono};
   font-size: 12px;
   color: ${(p) => p.theme.fg2};

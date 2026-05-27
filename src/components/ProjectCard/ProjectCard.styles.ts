@@ -1,15 +1,17 @@
 import styled from 'styled-components'
+import { motion } from 'motion/react'
 
-export const Card = styled.article<{ $hovered: boolean }>`
+export const Card = styled(motion.article)`
   background: ${(p) => p.theme.card};
-  border: 1px solid ${(p) => (p.$hovered ? 'rgba(249,168,212,0.3)' : p.theme.border)};
+  border: 1px solid ${(p) => p.theme.border};
   border-radius: 3px;
   overflow: hidden;
   display: flex;
-  transform: ${(p) => (p.$hovered ? 'translateY(-3px)' : 'none')};
-  transition:
-    border-color 0.25s,
-    transform 0.25s;
+  transition: border-color 0.25s;
+
+  &:hover {
+    border-color: rgba(249, 168, 212, 0.3);
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;

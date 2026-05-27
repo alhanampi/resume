@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from 'motion/react'
 
-export const Wrapper = styled.nav<{ $scrolled: boolean }>`
+export const Wrapper = styled(motion.nav)<{ $scrolled: boolean }>`
   position: fixed;
   top: 0;
   left: 0;

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'motion/react'
 
 export const Outer = styled.div`
   background: ${(p) => p.theme.bg2};
@@ -6,7 +7,7 @@ export const Outer = styled.div`
   border-bottom: 1px solid ${(p) => p.theme.border};
 `
 
-export const Inner = styled.section`
+export const Inner = styled(motion.section)`
   max-width: 1200px;
   margin: 0 auto;
   padding: 112px 64px;
@@ -60,7 +61,7 @@ export const CatList = styled.div`
   flex-direction: column;
 `
 
-export const CategoryRow = styled.div`
+export const CategoryRow = styled(motion.div)`
   display: flex;
   align-items: flex-start;
   gap: 48px;
