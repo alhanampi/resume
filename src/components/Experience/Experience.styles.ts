@@ -1,8 +1,6 @@
-import { useState } from 'react'
 import styled from 'styled-components'
-import { experience } from '../data/experience'
 
-const Section = styled.section`
+export const Section = styled.section`
   border-top: 1px solid ${(p) => p.theme.border};
   padding: 112px 64px;
   max-width: 1200px;
@@ -13,7 +11,7 @@ const Section = styled.section`
   }
 `
 
-const SectionLabel = styled.div`
+export const SectionLabel = styled.div`
   display: flex;
   align-items: center;
   font-family: ${(p) => p.theme.fontMono};
@@ -33,15 +31,16 @@ const SectionLabel = styled.div`
   }
 `
 
-const Slash = styled.span`
+export const Slash = styled.span`
   color: ${(p) => p.theme.accent};
   margin-right: 4px;
 `
-const Num = styled.span`
+
+export const Num = styled.span`
   color: ${(p) => p.theme.accent};
 `
 
-const Heading = styled.h2`
+export const Heading = styled.h2`
   font-family: ${(p) => p.theme.fontDisplay};
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 700;
@@ -51,7 +50,7 @@ const Heading = styled.h2`
   line-height: 1.1;
 `
 
-const Lead = styled.p`
+export const Lead = styled.p`
   font-family: ${(p) => p.theme.fontBody};
   font-size: 15px;
   color: ${(p) => p.theme.fg2};
@@ -60,17 +59,17 @@ const Lead = styled.p`
   line-height: 1.7;
 `
 
-const List = styled.div`
+export const List = styled.div`
   display: flex;
   flex-direction: column;
 `
 
-const Item = styled.div<{ $last: boolean }>`
+export const Item = styled.div<{ $last: boolean }>`
   border-top: 1px solid ${(p) => p.theme.border};
   border-bottom: ${(p) => (p.$last ? `1px solid ${p.theme.border}` : 'none')};
 `
 
-const Toggle = styled.button`
+export const Toggle = styled.button`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -81,9 +80,9 @@ const Toggle = styled.button`
   text-align: left;
 `
 
-const ToggleLeft = styled.div``
+export const ToggleLeft = styled.div``
 
-const TitleRow = styled.div`
+export const TitleRow = styled.div`
   display: flex;
   align-items: baseline;
   gap: 12px;
@@ -91,7 +90,7 @@ const TitleRow = styled.div`
   flex-wrap: wrap;
 `
 
-const Company = styled.span<{ $open: boolean }>`
+export const Company = styled.span<{ $open: boolean }>`
   font-family: ${(p) => p.theme.fontDisplay};
   font-size: clamp(20px, 2.4vw, 28px);
   font-weight: 700;
@@ -100,14 +99,14 @@ const Company = styled.span<{ $open: boolean }>`
   transition: color 0.2s;
 `
 
-const Role = styled.span`
+export const Role = styled.span`
   font-family: ${(p) => p.theme.fontBody};
   font-size: 14px;
   font-weight: 400;
   color: ${(p) => p.theme.fg2};
 `
 
-const Summary = styled.p<{ $hidden: boolean }>`
+export const Summary = styled.p<{ $hidden: boolean }>`
   font-family: ${(p) => p.theme.fontBody};
   font-size: 13px;
   color: ${(p) => p.theme.fg2};
@@ -115,14 +114,14 @@ const Summary = styled.p<{ $hidden: boolean }>`
   display: ${(p) => (p.$hidden ? 'none' : 'block')};
 `
 
-const ToggleRight = styled.div`
+export const ToggleRight = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
   padding-top: 4px;
 `
 
-const Period = styled.span`
+export const Period = styled.span`
   font-family: ${(p) => p.theme.fontMono};
   font-size: 11px;
   color: ${(p) => p.theme.fg2};
@@ -130,7 +129,7 @@ const Period = styled.span`
   white-space: nowrap;
 `
 
-const PlusIcon = styled.span<{ $open: boolean }>`
+export const PlusIcon = styled.span<{ $open: boolean }>`
   font-family: ${(p) => p.theme.fontDisplay};
   font-size: 18px;
   color: ${(p) => p.theme.fg2};
@@ -139,17 +138,17 @@ const PlusIcon = styled.span<{ $open: boolean }>`
   transform: ${(p) => (p.$open ? 'rotate(45deg)' : 'none')};
 `
 
-const Details = styled.div<{ $open: boolean }>`
+export const Details = styled.div<{ $open: boolean }>`
   overflow: hidden;
   max-height: ${(p) => (p.$open ? '600px' : '0')};
   transition: max-height 0.35s ease;
 `
 
-const DetailsInner = styled.div`
+export const DetailsInner = styled.div`
   padding-bottom: 32px;
 `
 
-const Bullets = styled.ul`
+export const Bullets = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -157,7 +156,7 @@ const Bullets = styled.ul`
   margin-bottom: 24px;
 `
 
-const Bullet = styled.li`
+export const Bullet = styled.li`
   display: flex;
   gap: 12px;
   font-family: ${(p) => p.theme.fontBody};
@@ -167,13 +166,13 @@ const Bullet = styled.li`
   padding-right: 40px;
 `
 
-const BulletArrow = styled.span`
+export const BulletArrow = styled.span`
   color: ${(p) => p.theme.accent};
   flex-shrink: 0;
   margin-top: 1px;
 `
 
-const StackLine = styled.p`
+export const StackLine = styled.p`
   font-family: ${(p) => p.theme.fontBody};
   font-size: 12px;
   color: ${(p) => p.theme.fg2};
@@ -181,66 +180,7 @@ const StackLine = styled.p`
   padding-top: 16px;
 `
 
-const StackAccent = styled.span`
+export const StackAccent = styled.span`
   color: ${(p) => p.theme.accent};
   font-weight: 500;
 `
-
-export default function Experience() {
-  const [expanded, setExpanded] = useState<string | null>('GlobalLogic-0')
-
-  return (
-    <Section id="experience">
-      <SectionLabel>
-        <Slash>//</Slash>
-        <Num>&nbsp;03.</Num>&nbsp;experience
-      </SectionLabel>
-      <Heading>Work History</Heading>
-      <Lead>
-        6+ years across fintech, banking, AI platforms, and education — building and shipping at
-        scale.
-      </Lead>
-
-      <List>
-        {experience.map((job, i) => {
-          const key = `${job.company}-${i}`
-          const isOpen = expanded === key
-          return (
-            <Item key={key} $last={i === experience.length - 1}>
-              <Toggle onClick={() => setExpanded(isOpen ? null : key)}>
-                <ToggleLeft>
-                  <TitleRow>
-                    <Company $open={isOpen}>{job.company}</Company>
-                    <Role>— {job.role}</Role>
-                  </TitleRow>
-                  <Summary $hidden={isOpen}>{job.description}</Summary>
-                </ToggleLeft>
-                <ToggleRight>
-                  <Period>{job.period}</Period>
-                  <PlusIcon $open={isOpen}>+</PlusIcon>
-                </ToggleRight>
-              </Toggle>
-              <Details $open={isOpen}>
-                <DetailsInner>
-                  <Bullets>
-                    {job.bullets.map((b, bi) => (
-                      <Bullet key={bi}>
-                        <BulletArrow>▸</BulletArrow>
-                        {b}
-                      </Bullet>
-                    ))}
-                  </Bullets>
-                  {job.stack && (
-                    <StackLine>
-                      <StackAccent>Stack:</StackAccent> {job.stack}
-                    </StackLine>
-                  )}
-                </DetailsInner>
-              </Details>
-            </Item>
-          )
-        })}
-      </List>
-    </Section>
-  )
-}

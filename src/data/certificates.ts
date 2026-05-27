@@ -1,15 +1,4 @@
-export interface Certificate {
-  title: string
-  issuer: string
-  platform: string
-  date: string
-}
-
-export interface Degree {
-  title: string
-  institution: string
-  year: string
-}
+import type { Certificate, Degree } from '../utils/types'
 
 export const certificates: Certificate[] = [
   {

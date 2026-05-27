@@ -1,11 +1,4 @@
-export interface Job {
-  company: string
-  role: string
-  period: string
-  description: string
-  bullets: string[]
-  stack?: string
-}
+import type { Job } from '../utils/types'
 
 export const experience: Job[] = [
   {

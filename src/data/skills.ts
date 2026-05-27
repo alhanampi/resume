@@ -1,7 +1,4 @@
-export interface SkillCategory {
-  label: string
-  items: string[]
-}
+import type { SkillCategory } from '../utils/types'
 
 export const skills: SkillCategory[] = [
   {

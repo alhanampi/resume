@@ -1,12 +1,4 @@
-export interface Project {
-  id: string
-  name: string
-  description: string
-  liveUrl: string
-  githubUrl: string
-  tags: string[]
-  featured?: boolean
-}
+import type { Project } from '../utils/types'
 
 export const projects: Project[] = [
   {

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import { certificates, education } from '../data/certificates'
 
-const Section = styled.section`
+export const Section = styled.section`
   border-top: 1px solid ${(p) => p.theme.border};
   padding: 112px 64px;
   max-width: 1200px;
@@ -12,7 +11,7 @@ const Section = styled.section`
   }
 `
 
-const SectionLabel = styled.div`
+export const SectionLabel = styled.div`
   display: flex;
   align-items: center;
   font-family: ${(p) => p.theme.fontMono};
@@ -32,16 +31,16 @@ const SectionLabel = styled.div`
   }
 `
 
-const Slash = styled.span`
+export const Slash = styled.span`
   color: ${(p) => p.theme.accent};
   margin-right: 4px;
 `
 
-const Num = styled.span`
+export const Num = styled.span`
   color: ${(p) => p.theme.accent};
 `
 
-const Heading = styled.h2`
+export const Heading = styled.h2`
   font-family: ${(p) => p.theme.fontDisplay};
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 700;
@@ -51,7 +50,7 @@ const Heading = styled.h2`
   line-height: 1.1;
 `
 
-const Lead = styled.p`
+export const Lead = styled.p`
   font-family: ${(p) => p.theme.fontBody};
   font-size: 15px;
   color: ${(p) => p.theme.fg2};
@@ -60,7 +59,7 @@ const Lead = styled.p`
   line-height: 1.7;
 `
 
-const Grid = styled.div`
+export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -71,9 +70,9 @@ const Grid = styled.div`
   }
 `
 
-const Column = styled.div``
+export const Column = styled.div``
 
-const ColTitle = styled.h3`
+export const ColTitle = styled.h3`
   font-family: ${(p) => p.theme.fontMono};
   font-size: 11px;
   letter-spacing: 0.08em;
@@ -82,13 +81,13 @@ const ColTitle = styled.h3`
   text-transform: uppercase;
 `
 
-const List = styled.ul`
+export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
 `
 
-const CertItem = styled.li`
+export const CertItem = styled.li`
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: baseline;
@@ -101,9 +100,9 @@ const CertItem = styled.li`
   }
 `
 
-const CertLeft = styled.div``
+export const CertLeft = styled.div``
 
-const CertTitle = styled.p`
+export const CertTitle = styled.p`
   font-family: ${(p) => p.theme.fontBody};
   font-size: 14px;
   font-weight: 500;
@@ -112,13 +111,13 @@ const CertTitle = styled.p`
   margin-bottom: 4px;
 `
 
-const CertIssuer = styled.p`
+export const CertIssuer = styled.p`
   font-family: ${(p) => p.theme.fontBody};
   font-size: 12px;
   color: ${(p) => p.theme.fg2};
 `
 
-const CertDate = styled.span`
+export const CertDate = styled.span`
   font-family: ${(p) => p.theme.fontMono};
   font-size: 11px;
   color: ${(p) => p.theme.fg2};
@@ -126,7 +125,7 @@ const CertDate = styled.span`
   letter-spacing: 0.02em;
 `
 
-const EduItem = styled.li`
+export const EduItem = styled.li`
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: baseline;
@@ -139,9 +138,9 @@ const EduItem = styled.li`
   }
 `
 
-const EduLeft = styled.div``
+export const EduLeft = styled.div``
 
-const EduTitle = styled.p`
+export const EduTitle = styled.p`
   font-family: ${(p) => p.theme.fontBody};
   font-size: 14px;
   font-weight: 500;
@@ -149,64 +148,16 @@ const EduTitle = styled.p`
   margin-bottom: 4px;
 `
 
-const EduInstitution = styled.p`
+export const EduInstitution = styled.p`
   font-family: ${(p) => p.theme.fontBody};
   font-size: 12px;
   color: ${(p) => p.theme.fg2};
 `
 
-const EduYear = styled.span<{ $inProgress: boolean }>`
+export const EduYear = styled.span<{ $inProgress: boolean }>`
   font-family: ${(p) => p.theme.fontMono};
   font-size: 11px;
   color: ${(p) => (p.$inProgress ? p.theme.accent : p.theme.fg2)};
   white-space: nowrap;
   letter-spacing: 0.02em;
 `
-
-export default function Certificates() {
-  return (
-    <Section id="certificates">
-      <SectionLabel>
-        <Slash>//</Slash>
-        <Num>&nbsp;04.</Num>&nbsp;learning
-      </SectionLabel>
-      <Heading>Certifications & Education</Heading>
-      <Lead>
-        Continuously upskilling across AI, data, and frontend — formal training and self-directed
-        learning side by side.
-      </Lead>
-
-      <Grid>
-        <Column>
-          <ColTitle>Certifications</ColTitle>
-          <List>
-            {certificates.map((cert, i) => (
-              <CertItem key={i}>
-                <CertLeft>
-                  <CertTitle>{cert.title}</CertTitle>
-                  <CertIssuer>{cert.issuer}</CertIssuer>
-                </CertLeft>
-                <CertDate>{cert.date}</CertDate>
-              </CertItem>
-            ))}
-          </List>
-        </Column>
-
-        <Column>
-          <ColTitle>Education</ColTitle>
-          <List>
-            {education.map((deg, i) => (
-              <EduItem key={i}>
-                <EduLeft>
-                  <EduTitle>{deg.title}</EduTitle>
-                  <EduInstitution>{deg.institution}</EduInstitution>
-                </EduLeft>
-                <EduYear $inProgress={deg.year === 'In Progress'}>{deg.year}</EduYear>
-              </EduItem>
-            ))}
-          </List>
-        </Column>
-      </Grid>
-    </Section>
-  )
-}
