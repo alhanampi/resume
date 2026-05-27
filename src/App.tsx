@@ -13,6 +13,7 @@ import Certificates from './components/Certificates'
 
 export default function App() {
   useEffect(() => {
+    window.scrollTo(0, 0)
     const lenis = new Lenis({ duration: 1.2, easing: (t) => 1 - Math.pow(1 - t, 4) })
     let raf: number
     const loop = (time: number) => {

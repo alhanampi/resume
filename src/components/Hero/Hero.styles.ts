@@ -22,11 +22,12 @@ export const AvailableBadge = styled.div`
   align-items: center;
   gap: 8px;
   font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #4ade80;
-  margin-bottom: 20px;
+  padding: 12px 0;
+  margin-bottom: 12px;
 `
 
 export const AvailableDot = styled.span`
