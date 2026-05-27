@@ -51,7 +51,7 @@ export const Canvas = styled.canvas`
 
 export const SubtitleArea = styled.div<{ $visible: boolean }>`
   position: absolute;
-  bottom: 80px;
+  bottom: 56px;
   left: 64px;
   right: 64px;
   z-index: 1;

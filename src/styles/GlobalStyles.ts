@@ -8,7 +8,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    scroll-behavior: smooth;
     font-size: 16px;
   }
 

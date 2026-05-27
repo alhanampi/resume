@@ -140,7 +140,6 @@ export default function Hero() {
 
       <ScrollIndicator $visible={visible}>
         <ScrollLine />
-        <ScrollLabel>scroll</ScrollLabel>
       </ScrollIndicator>
     </Section>
   )
