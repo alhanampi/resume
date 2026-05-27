@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 
-export const Outer = styled.div`
+export const Outer = styled.div<{ $visible: boolean }>`
   background: ${(p) => p.theme.bg2};
   border-top: 1px solid ${(p) => p.theme.border};
   border-bottom: 1px solid ${(p) => p.theme.border};
+  opacity: ${(p) => (p.$visible ? 1 : 0)};
+  transform: ${(p) => (p.$visible ? 'translateY(0)' : 'translateY(32px)')};
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 `
 
 export const Inner = styled.section`
@@ -101,6 +106,9 @@ export const TagRow = styled.div`
 `
 
 export const Pill = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: ${(p) => p.theme.fontBody};
   font-size: 13px;
   font-weight: 400;

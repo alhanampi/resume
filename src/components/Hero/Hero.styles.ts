@@ -10,7 +10,33 @@ export const pulseLine = keyframes`
   50%       { opacity: 0.2; transform: scaleY(0.45); }
 `
 
+const availablePulse = keyframes`
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+  50%       { box-shadow: 0 0 0 5px rgba(74, 222, 128, 0); }
+`
+
 export { fadeUp }
+
+export const AvailableBadge = styled.div`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ${(p) => p.theme.fontMono};
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4ade80;
+  margin-bottom: 20px;
+`
+
+export const AvailableDot = styled.span`
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: ${availablePulse} 2s ease-in-out infinite;
+`
 
 export const Section = styled.div`
   position: relative;

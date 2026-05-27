@@ -1,10 +1,15 @@
 import styled from 'styled-components'
 
-export const Section = styled.section`
+export const Section = styled.section<{ $visible: boolean }>`
   border-top: 1px solid ${(p) => p.theme.border};
   padding: 112px 64px;
   max-width: 1200px;
   margin: 0 auto;
+  opacity: ${(p) => (p.$visible ? 1 : 0)};
+  transform: ${(p) => (p.$visible ? 'translateY(0)' : 'translateY(32px)')};
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 
   @media (max-width: 768px) {
     padding: 72px 24px;
@@ -62,11 +67,40 @@ export const Lead = styled.p`
 export const List = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
+  padding-left: 28px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: ${(p) => p.theme.border};
+  }
 `
 
-export const Item = styled.div<{ $last: boolean }>`
+export const Item = styled.div<{ $last: boolean; $open: boolean }>`
   border-top: 1px solid ${(p) => p.theme.border};
   border-bottom: ${(p) => (p.$last ? `1px solid ${p.theme.border}` : 'none')};
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 38px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: ${(p) => (p.$open ? p.theme.accent : p.theme.bg)};
+    border: 1px solid ${(p) => (p.$open ? p.theme.accent : p.theme.border)};
+    transition:
+      background 0.2s,
+      border-color 0.2s;
+    z-index: 1;
+  }
 `
 
 export const Toggle = styled.button`

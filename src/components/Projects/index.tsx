@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react'
 import type { Project } from '../../utils/types'
 import { projects as staticProjects } from '../../data/projects'
 import ProjectCard from '../ProjectCard'
+import { useInView } from '../../hooks/useInView'
 
 import { Section, SectionLabel, Slash, Num, Heading, Lead, Grid, SkeletonCard } from './Projects.styles'
 
 export default function Projects() {
+  const [ref, visible] = useInView()
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -19,7 +21,7 @@ export default function Projects() {
   }, [])
 
   return (
-    <Section id="projects">
+    <Section ref={ref} id="projects" $visible={visible}>
       <SectionLabel>
         <Slash>//</Slash>
         <Num>&nbsp;01.</Num>&nbsp;projects

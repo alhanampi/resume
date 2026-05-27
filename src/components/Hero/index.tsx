@@ -8,6 +8,8 @@ import {
   CodeComment,
   Canvas,
   SubtitleArea,
+  AvailableBadge,
+  AvailableDot,
   Subtitle,
   LinkRow,
   LinkButton,
@@ -119,6 +121,10 @@ export default function Hero() {
       <Canvas ref={canvasRef} />
 
       <SubtitleArea $visible={visible}>
+        <AvailableBadge>
+          <AvailableDot />
+          Available for opportunities
+        </AvailableBadge>
         <Subtitle>
           Senior Frontend Engineer — React · TypeScript · AI-Driven Applications
           <br />

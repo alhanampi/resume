@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { experience } from '../../data/experience'
+import { useInView } from '../../hooks/useInView'
 
 import {
   Section,
@@ -30,10 +31,11 @@ import {
 } from './Experience.styles'
 
 export default function Experience() {
+  const [ref, visible] = useInView()
   const [expanded, setExpanded] = useState<string | null>('GlobalLogic-0')
 
   return (
-    <Section id="experience">
+    <Section ref={ref} id="experience" $visible={visible}>
       <SectionLabel>
         <Slash>//</Slash>
         <Num>&nbsp;03.</Num>&nbsp;experience
@@ -49,7 +51,7 @@ export default function Experience() {
           const key = `${job.company}-${i}`
           const isOpen = expanded === key
           return (
-            <Item key={key} $last={i === experience.length - 1}>
+            <Item key={key} $last={i === experience.length - 1} $open={isOpen}>
               <Toggle onClick={() => setExpanded(isOpen ? null : key)}>
                 <ToggleLeft>
                   <TitleRow>

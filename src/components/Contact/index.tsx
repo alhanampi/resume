@@ -1,4 +1,5 @@
 import { CONTACT_LINKS } from '../../constants'
+import { useInView } from '../../hooks/useInView'
 
 import {
   Outer,
@@ -17,8 +18,9 @@ import {
 } from './Contact.styles'
 
 export default function Contact() {
+  const [ref, visible] = useInView()
   return (
-    <Outer>
+    <Outer ref={ref} $visible={visible}>
       <Inner id="contact">
         <SectionLabel>
           <Slash>//</Slash>
