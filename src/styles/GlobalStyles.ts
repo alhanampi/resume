@@ -9,6 +9,8 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 16px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
   }
 
   body {

@@ -1,7 +1,6 @@
 import { NAV_LINKS } from '../../constants'
 import { useScrolled } from '../../hooks/useScrolled'
 import { useActiveSection } from '../../hooks/useActiveSection'
-import { getLenis } from '../../lib/lenis'
 
 import { Wrapper, LinkList, NavLink } from './Nav.styles'
 
@@ -13,7 +12,7 @@ export default function Nav() {
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
-    getLenis()?.scrollTo(href)
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
