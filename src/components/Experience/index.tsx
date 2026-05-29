@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react'
 
 import { experience } from '../../data/experience'
 import { fadeUp, fadeIn, stagger, viewport } from '../../animations/variants'
+import { panelVariants } from './Experience.constants'
 import {
   Section,
   SectionLabel,
@@ -29,14 +30,6 @@ import {
   StackAccent,
 } from './Experience.styles'
 
-const panelVariants = {
-  closed: { height: 0, opacity: 0 },
-  open: {
-    height: 'auto',
-    opacity: 1,
-    transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] as const },
-  },
-}
 
 export default function Experience() {
   const [expanded, setExpanded] = useState<string | null>('GlobalLogic-0')

@@ -2,18 +2,34 @@
 
 ## File structure
 
-Each component is a single file with one default export. Styled components are defined above the component function in the same file — no separate `styles.ts` files.
+Each component lives in its own folder under `src/components/`. The folder always has an `index.tsx` and a `ComponentName.styles.ts`. When the component has non-trivial constants, data arrays, or component-specific variants, extract them to `ComponentName.constants.ts`.
 
 ```
 src/components/
-  Hero.tsx         ← full-page section, no props
-  Nav.tsx          ← full-page section, no props
-  Projects.tsx     ← full-page section, no props
-  ProjectCard.tsx  ← leaf component, receives typed props
-  Skills.tsx
-  Experience.tsx
-  Contact.tsx
+  Hero/
+    index.tsx               ← component logic and JSX only
+    Hero.styles.ts          ← all styled-components for this component
+    Hero.constants.ts       ← WORDS, STATS, animation variants
+  Experience/
+    index.tsx
+    Experience.styles.ts
+    Experience.constants.ts ← panelVariants
+  ProjectCard/
+    index.tsx
+    ProjectCard.styles.ts   ← no constants file needed (no inline data/variants)
+  Nav/
+    index.tsx
+    Nav.styles.ts
 ```
+
+### When to add a constants file
+
+Add `ComponentName.constants.ts` when the component's `index.tsx` would otherwise contain any of:
+- Static data arrays (`WORDS`, `STATS`, …)
+- Component-specific animation variants (not imported from `src/animations/variants.ts`)
+- Non-trivial configuration objects used only by this component
+
+Do **not** create a constants file just to move a one-liner — keep obvious, single-use values inline.
 
 ## Section components vs. leaf components
 
