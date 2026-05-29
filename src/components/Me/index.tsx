@@ -1,12 +1,6 @@
 import { useInView } from '../../hooks/useInView'
+import { STATS } from './Me.constants'
 import { Section, SectionLabel, Slash, Num, Heading, Bio, StatRow, Stat } from './Me.styles'
-
-const STATS = [
-  '6+ years experience',
-  'React & TypeScript',
-  'AI-driven products',
-  'Remote worldwide',
-]
 
 export default function Me() {
   const [ref, visible] = useInView()

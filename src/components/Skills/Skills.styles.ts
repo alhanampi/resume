@@ -35,6 +35,10 @@ export const SectionLabel = styled.div`
     width: 80px;
     margin-left: 16px;
   }
+
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
 `
 
 export const Slash = styled.span`
@@ -54,6 +58,10 @@ export const Heading = styled.h2`
   color: ${(p) => p.theme.fg};
   margin-bottom: 64px;
   line-height: 1.1;
+
+  @media (max-width: 768px) {
+    margin-bottom: 32px;
+  }
 `
 
 export const CatList = styled.div`
@@ -90,6 +98,7 @@ export const CatLabel = styled.p`
   padding-top: 6px;
 
   @media (max-width: 768px) {
+    flex: none;
     padding-top: 0;
   }
 `

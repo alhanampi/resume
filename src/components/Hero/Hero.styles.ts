@@ -5,10 +5,10 @@ export const Section = styled(motion.section)`
   position: relative;
   width: 100%;
   background: ${(p) => p.theme.bg};
-  padding: 0 64px;
+  padding: 60px 64px 0;
 
   @media (max-width: 600px) {
-    padding: 0 24px;
+    padding: 60px 24px 0;
   }
 `
 

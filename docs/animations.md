@@ -25,7 +25,7 @@ import { fadeUp, fadeIn, stagger, staggerFast, viewport } from '../../animations
 | `staggerFast` | Container that staggers many small items (0.05s between) |
 | `viewport` | `{ once: true, margin: '-80px' }` — apply to all `whileInView` |
 
-Define component-specific variants locally in the component file when they are not reusable (e.g., the Hero name cascade).
+Define component-specific variants in `ComponentName.constants.ts` (colocated with the component) when they are not reusable. Import them into `index.tsx` — don't declare them inline.
 
 ## styled-components integration
 
@@ -101,7 +101,7 @@ The Hero uses `initial="hidden" animate="visible"` (not `whileInView`) since it'
 1. `nameContainer` — staggered name words + underline (starts at t=0.15s)
 2. `contentContainer` — all content below (starts at t=0.7s, staggered internally)
 
-Define these variants locally inside `Hero/index.tsx` since they're specific to that component.
+These variants live in `Hero/Hero.constants.ts` since they're specific to that component.
 
 ## AnimatePresence (accordions, conditionals)
 
