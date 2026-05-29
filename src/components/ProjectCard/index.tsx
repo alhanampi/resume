@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import type { Project } from '../../utils/types'
 
 import {
@@ -8,7 +10,8 @@ import {
   Dot,
   UrlBar,
   Preview,
-  PreviewFallback,
+  PreviewImg,
+  PreviewGradient,
   IndexBadge,
   InfoSide,
   CardTitle,
@@ -25,6 +28,8 @@ interface Props {
 }
 
 export default function ProjectCard({ project, index }: Props) {
+  const [imgError, setImgError] = useState(false)
+
   return (
     <Card whileHover={{ y: -4 }} transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}>
       <PreviewSide>
@@ -38,9 +43,15 @@ export default function ProjectCard({ project, index }: Props) {
         </Chrome>
 
         <Preview>
-          <PreviewFallback>
-            <span style={{ fontSize: 24, opacity: 0.2 }}>◇</span>preview unavailable
-          </PreviewFallback>
+          {imgError ? (
+            <PreviewGradient $index={index} />
+          ) : (
+            <PreviewImg
+              src={`/previews/${project.githubUrl.split('/').pop()}.png`}
+              alt={project.name}
+              onError={() => setImgError(true)}
+            />
+          )}
           <IndexBadge>{String(index + 1).padStart(2, '0')}</IndexBadge>
         </Preview>
       </PreviewSide>
