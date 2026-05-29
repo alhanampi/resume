@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 
 import type { Project } from '../../utils/types'
-import { projects as staticProjects } from '../../data/projects'
-import ProjectCard from '../ProjectCard'
 import { fadeUp, fadeIn, stagger, viewport } from '../../animations/variants'
+
+import { projects as staticProjects } from '../../data/projects'
+
+import ProjectCard from '../ProjectCard'
 import { Section, SectionLabel, Slash, Num, Heading, Lead, Grid } from './Projects.styles'
 
 export default function Projects() {

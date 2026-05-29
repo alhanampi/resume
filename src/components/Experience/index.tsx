@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 
-import { experience } from '../../data/experience'
 import { fadeUp, fadeIn, stagger, viewport } from '../../animations/variants'
 import { panelVariants } from './Experience.constants'
+
+import { experience } from '../../data/experience'
 import {
   Section,
   SectionLabel,

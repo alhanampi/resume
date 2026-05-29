@@ -35,7 +35,7 @@ const Title = styled.h2`
 | `theme.bg` | `#0c0a0b` | Main background |
 | `theme.bg2` | `#100d0e` | Secondary background |
 | `theme.fg` | `#f0ece8` | Primary text |
-| `theme.fg2` | `#6a6260` | Muted text, labels |
+| `theme.fg2` | `#f0e9e7` | Muted text, labels |
 | `theme.accent` | `#f9a8d4` | Highlights, active states |
 | `theme.accentDim` | `rgba(249,168,212,0.09)` | Hover backgrounds |
 | `theme.border` | `#201a1c` | Borders, dividers |

@@ -20,6 +20,7 @@ Personal portfolio site for **Pamina Goldenberg Thiery**, Senior Frontend Develo
 - **Fully typed** — strict TypeScript throughout, shared interfaces in `src/utils/types.ts`
 - **Dark theme** — token-based design system in `src/styles/theme.ts`, zero hardcoded values
 - **Responsive** — mobile-first breakpoints, canvas scales to viewport
+- **Accessible animations** — `MotionConfig reducedMotion="user"` in `App.tsx` honours `prefers-reduced-motion` globally; no extra per-component code needed
 
 ---
 
@@ -30,6 +31,7 @@ Personal portfolio site for **Pamina Goldenberg Thiery**, Senior Frontend Develo
 | Framework | React 18 + Vite |
 | Language | TypeScript (strict) |
 | Styling | styled-components + theme tokens |
+| Animations | Motion (`motion/react`) — scroll reveals, hover lifts, accordions |
 | Edge function | Vercel (GitHub GraphQL API) |
 | Deployment | Vercel |
 
@@ -100,9 +102,10 @@ npm run format
 | File | Contents |
 |---|---|
 | [`docs/clean-code.md`](docs/clean-code.md) | Architecture conventions, folder structure, import order, hook extraction rules, TypeScript standards |
-| [`docs/ui.md`](docs/ui.md) | styled-components standards: theme tokens, transient props, fonts, breakpoints, keyframes |
+| [`docs/ui.md`](docs/ui.md) | styled-components standards: theme tokens, transient props, fonts, breakpoints |
 | [`docs/components.md`](docs/components.md) | Component conventions: section vs. leaf, how to add a section, state rules |
 | [`docs/data.md`](docs/data.md) | Content layer: `src/data/` conventions, how to add projects or new categories |
+| [`docs/animations.md`](docs/animations.md) | Motion standards: shared variants, scroll-triggered sections, AnimatePresence, easing, reduced-motion |
 
 ---
 
@@ -111,3 +114,21 @@ npm run format
 The site deploys automatically to Vercel on every push to `main`. The `api/pinned.ts` edge function runs server-side at request time — no rebuild is needed when pinned repos change on GitHub.
 
 To update which projects appear on the site, **pin or unpin repos on your GitHub profile**. Set the repo's **Website** field in GitHub settings so the "live demo →" link resolves correctly.
+
+---
+
+## Architecture decisions
+
+**No routing library** — this is a single scrolling page; hash anchors handle navigation without a router dependency.
+
+**No global state** — the only shared UI state is scroll position and active section, both computed from browser APIs and scoped to `Nav`. No Redux, Zustand, or Context needed.
+
+**No external UI library** — every component is hand-built with styled-components. The bundle stays lean and the styling is fully intentional.
+
+**Token-based design system** — all colors, fonts, and sizes come from `src/styles/theme.ts` via `ThemeProvider`. Zero hardcoded values in component styles, making global restyling a one-file change.
+
+**Live projects via Vercel edge function** — pinned repos are fetched at request time from the GitHub GraphQL API. Updating the projects section requires no code change and no rebuild — just pin or unpin on GitHub.
+
+**Shared animation variants** — timing curves and stagger values live once in `src/animations/variants.ts`. All sections use the same `fadeUp`, `fadeIn`, and `stagger` variants, so the motion language is consistent without duplication.
+
+**Styles collocated but separate** — each component has an `index.tsx` for logic and a `ComponentName.styles.ts` for styled-components. Logic and styles are easy to find; neither file grows unwieldy.

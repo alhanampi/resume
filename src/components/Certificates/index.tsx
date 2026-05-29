@@ -1,7 +1,8 @@
 import { motion } from 'motion/react'
 
-import { certificates, education } from '../../data/certificates'
 import { fadeUp, fadeIn, stagger, staggerFast, viewport } from '../../animations/variants'
+
+import { certificates, education } from '../../data/certificates'
 import {
   Section,
   SectionLabel,

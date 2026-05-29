@@ -18,7 +18,7 @@ Pamina Goldenberg Thiery's portfolio site. Vite + React 18 + TypeScript, deploye
 - [`docs/ui.md`](docs/ui.md) — styled-components standards: theme tokens, transient props, fonts, breakpoints
 - [`docs/components.md`](docs/components.md) — component conventions: section vs. leaf, how to add a section, state rules
 - [`docs/data.md`](docs/data.md) — content layer: src/data/ conventions, how to add projects or new categories
-- [`docs/animations.md`](docs/animations.md) — Motion (framer-motion) standards: variants, whileInView, AnimatePresence, best practices
+- [`docs/animations.md`](docs/animations.md) — Motion (`motion/react`) standards: shared variants, scroll-triggered sections, AnimatePresence, easing, reduced-motion
 - [`docs/clean-code.md`](docs/clean-code.md) — general code quality and style guidelines
 
 ## Commands
