@@ -79,29 +79,32 @@ export const Preview = styled.div`
   min-height: 240px;
 `
 
-export const PreviewIframe = styled.iframe`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  border: none;
-  transform: scale(0.5);
-  transform-origin: top left;
-  pointer-events: none;
-`
-
-export const PreviewFallback = styled.div`
+export const PreviewImg = styled.img`
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: ${(p) => p.theme.fontMono};
-  font-size: 11px;
-  color: ${(p) => p.theme.fg2};
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+`
+
+export const PreviewGradient = styled.div<{ $index: number }>`
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 65% 55% at ${({ $index }) =>
+        ['28% 72%', '72% 28%', '50% 45%', '22% 35%', '78% 65%', '45% 22%'][$index % 6]},
+      rgba(249, 168, 212, 0.18) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 40% 35% at ${({ $index }) =>
+        ['80% 20%', '20% 80%', '82% 82%', '78% 72%', '22% 28%', '72% 78%'][$index % 6]},
+      rgba(249, 168, 212, 0.07) 0%,
+      transparent 100%
+    ),
+    linear-gradient(145deg, #0d0810 0%, #080508 100%);
 `
 
 export const IndexBadge = styled.div`
