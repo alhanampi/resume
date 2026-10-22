@@ -12,8 +12,7 @@ src/components/
     Hero.constants.ts       ← WORDS, STATS, animation variants
   Experience/
     index.tsx
-    Experience.styles.ts
-    Experience.constants.ts ← panelVariants
+    Experience.styles.ts    ← panelVariants comes from src/animations/variants.ts
   ProjectCard/
     index.tsx
     ProjectCard.styles.ts   ← no constants file needed (no inline data/variants)

@@ -1,6 +1,14 @@
-import { motion } from 'motion/react'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
 
-import { fadeUp, fadeIn, stagger, staggerFast, viewport } from '../../animations/variants'
+import {
+  fadeUp,
+  fadeIn,
+  stagger,
+  staggerFast,
+  viewport,
+  panelVariants,
+} from '../../animations/variants'
 
 import { certificates, education } from '../../data/certificates'
 import {
@@ -14,6 +22,8 @@ import {
   Column,
   ColTitle,
   List,
+  ExtraList,
+  ToggleButton,
   CertItem,
   CertLeft,
   CertTitle,
@@ -26,7 +36,13 @@ import {
   EduYear,
 } from './Certificates.styles'
 
+const VISIBLE_CERTS = 8
+
 export default function Certificates() {
+  const [showAll, setShowAll] = useState(false)
+  const visibleCerts = certificates.slice(0, VISIBLE_CERTS)
+  const extraCerts = certificates.slice(VISIBLE_CERTS)
+
   return (
     <Section
       id="certificates"
@@ -57,8 +73,8 @@ export default function Certificates() {
             <ColTitle>Certifications</ColTitle>
           </motion.div>
           <List>
-            {certificates.map((cert, i) => (
-              <CertItem key={i} variants={fadeUp}>
+            {visibleCerts.map((cert) => (
+              <CertItem key={cert.title} variants={fadeUp}>
                 <CertLeft>
                   <CertTitle>{cert.title}</CertTitle>
                   <CertIssuer>{cert.issuer}</CertIssuer>
@@ -67,6 +83,41 @@ export default function Certificates() {
               </CertItem>
             ))}
           </List>
+          <AnimatePresence initial={false}>
+            {showAll && (
+              <ExtraList
+                id="extra-certificates"
+                key="extra-certificates"
+                initial="closed"
+                animate="open"
+                exit="closed"
+                variants={panelVariants}
+                style={{ overflow: 'hidden' }}
+              >
+                {extraCerts.map((cert) => (
+                  <CertItem key={cert.title}>
+                    <CertLeft>
+                      <CertTitle>{cert.title}</CertTitle>
+                      <CertIssuer>{cert.issuer}</CertIssuer>
+                    </CertLeft>
+                    <CertDate>{cert.date}</CertDate>
+                  </CertItem>
+                ))}
+              </ExtraList>
+            )}
+          </AnimatePresence>
+          {extraCerts.length > 0 && (
+            <motion.div variants={fadeUp}>
+              <ToggleButton
+                type="button"
+                aria-expanded={showAll}
+                aria-controls="extra-certificates"
+                onClick={() => setShowAll((prev) => !prev)}
+              >
+                {showAll ? 'show less ↑' : `show all (${certificates.length}) ↓`}
+              </ToggleButton>
+            </motion.div>
+          )}
         </Column>
 
         <Column variants={staggerFast}>
