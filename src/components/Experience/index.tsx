@@ -52,7 +52,7 @@ export default function Experience() {
       </motion.div>
       <motion.div variants={fadeUp}>
         <Lead>
-          6+ years across fintech, banking, AI platforms, and education — building and shipping at
+          7+ years across fintech, banking, AI platforms, and education — building and shipping at
           scale.
         </Lead>
       </motion.div>

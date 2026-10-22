@@ -48,6 +48,10 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
+    label: 'Code Quality & Tooling',
+    items: ['ESLint', 'Prettier', 'Knip', 'Large-scale Refactoring'],
+  },
+  {
     label: 'Backend & DB',
     items: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'Prisma', 'Drizzle ORM', 'Neon DB'],
   },
@@ -58,12 +62,15 @@ export const skills: SkillCategory[] = [
       'Microfrontend Architecture',
       'Accessibility (WCAG)',
       'Performance Optimization',
+      'API Integration',
+      'API Contract Design',
+      'Data Dashboards & Tables',
       'A/B Testing',
       'PWA',
     ],
   },
   {
     label: 'Data & Analytics',
-    items: ['Power BI', 'Python', 'Pandas', 'Data Analytics', 'Data Science'],
+    items: ['Power BI', 'Python', 'Data Analytics', 'Data Science'],
   },
 ]

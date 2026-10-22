@@ -36,7 +36,8 @@ export default function Hero() {
   return (
     <Section id="me" initial="hidden" animate="visible">
       <CodeComment variants={heroFadeIn}>
-        <span>// </span>{scrambled}
+        <span>// </span>
+        {scrambled}
       </CodeComment>
 
       <NameBlock variants={nameContainer}>
@@ -66,7 +67,8 @@ export default function Hero() {
         <Bio variants={heroFadeUp}>
           I build complex, user-facing products end-to-end — from architecture decisions to
           production delivery. My focus is React and TypeScript, with deep experience in fintech,
-          banking, and AI-powered platforms.
+          banking, and AI-powered platforms. Currently the sole frontend developer on two data
+          dashboard platforms, owning architecture through delivery.
         </Bio>
         <Bio variants={heroFadeUp}>
           I actively integrate AI tools into my workflow and the products I build, and I&apos;m
@@ -86,6 +88,7 @@ export default function Hero() {
               key={l.href}
               href={l.href}
               target={l.href.startsWith('http') ? '_blank' : undefined}
+              download={l.href.endsWith('.pdf') || undefined}
               rel="noreferrer"
             >
               {l.label}

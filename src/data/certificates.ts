@@ -131,7 +131,7 @@ export const education: Degree[] = [
   },
   {
     title: 'Programming and AI Studies',
-    institution: 'Universidad Siglo XXI',
+    institution: 'Universidad Siglo XXI · 2 years of coursework',
     year: '2022',
   },
   {
