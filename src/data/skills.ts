@@ -13,6 +13,7 @@ export const skills: SkillCategory[] = [
       'HTML',
       'CSS',
       'Sass',
+      'Web Workers',
     ],
   },
   {
@@ -31,6 +32,9 @@ export const skills: SkillCategory[] = [
     label: 'AI & LLM',
     items: [
       'Claude AI',
+      'Claude Code',
+      'Anthropic API',
+      'MCP (Model Context Protocol)',
       'GitHub Copilot',
       'Groq',
       'Google Gemini',
@@ -39,7 +43,13 @@ export const skills: SkillCategory[] = [
       'RAG',
       'LLMs',
       'Generative AI',
+      'LLM Fine-Tuning',
+      'AI Governance / Responsible AI',
     ],
+  },
+  {
+    label: 'Code Quality & Tooling',
+    items: ['ESLint', 'Prettier', 'Knip', 'Large-scale Refactoring'],
   },
   {
     label: 'Backend & DB',
@@ -52,12 +62,15 @@ export const skills: SkillCategory[] = [
       'Microfrontend Architecture',
       'Accessibility (WCAG)',
       'Performance Optimization',
+      'API Integration',
+      'API Contract Design',
+      'Data Dashboards & Tables',
       'A/B Testing',
       'PWA',
     ],
   },
   {
     label: 'Data & Analytics',
-    items: ['Power BI', 'Data Analytics', 'Data Science'],
+    items: ['Power BI', 'Python', 'Data Analytics', 'Data Science'],
   },
 ]

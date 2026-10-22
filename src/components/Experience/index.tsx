@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 
-import { fadeUp, fadeIn, stagger, viewport } from '../../animations/variants'
-import { panelVariants } from './Experience.constants'
+import { fadeUp, fadeIn, stagger, viewport, panelVariants } from '../../animations/variants'
 
 import { experience } from '../../data/experience'
 import {
@@ -31,7 +30,6 @@ import {
   StackAccent,
 } from './Experience.styles'
 
-
 export default function Experience() {
   const [expanded, setExpanded] = useState<string | null>('GlobalLogic-0')
 
@@ -54,7 +52,7 @@ export default function Experience() {
       </motion.div>
       <motion.div variants={fadeUp}>
         <Lead>
-          6+ years across fintech, banking, AI platforms, and education — building and shipping at
+          7+ years across fintech, banking, AI platforms, and education — building and shipping at
           scale.
         </Lead>
       </motion.div>

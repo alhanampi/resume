@@ -23,6 +23,7 @@ import { fadeUp, fadeIn, stagger, staggerFast, viewport } from '../../animations
 | `fadeIn` | Section labels, subtle opacity-only reveals |
 | `stagger` | Container that staggers 8 children (0.08s between) |
 | `staggerFast` | Container that staggers many small items (0.05s between) |
+| `panelVariants` | Expand/collapse panels inside `AnimatePresence` (`closed` / `open`) — Experience accordion, Certificates "show all" |
 | `viewport` | `{ once: true, margin: '-80px' }` — apply to all `whileInView` |
 
 Define component-specific variants in `ComponentName.constants.ts` (colocated with the component) when they are not reusable. Import them into `index.tsx` — don't declare them inline.

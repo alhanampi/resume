@@ -2,6 +2,96 @@ import type { Certificate, Degree } from '../utils/types'
 
 export const certificates: Certificate[] = [
   {
+    title: 'AI 204b: GL Certified AI Professional — Claude Code',
+    issuer: 'GlobalLogic',
+    platform: 'globallogic',
+    date: 'Aug 2026',
+  },
+  {
+    title: 'AI 101: GL Certified AI Associate — Developers',
+    issuer: 'GlobalLogic',
+    platform: 'globallogic',
+    date: 'Jun 2026',
+  },
+  {
+    title: 'Claude with the Anthropic API',
+    issuer: 'Anthropic',
+    platform: 'anthropic',
+    date: 'Aug 2026',
+  },
+  {
+    title: 'Introduction to Model Context Protocol',
+    issuer: 'Anthropic',
+    platform: 'anthropic',
+    date: 'Aug 2026',
+  },
+  {
+    title: 'Claude Code in Action',
+    issuer: 'Anthropic',
+    platform: 'anthropic',
+    date: 'Aug 2026',
+  },
+  {
+    title: 'Claude Code Beginner to Pro: Agentic Coding for Developers',
+    issuer: 'Udemy',
+    platform: 'udemy',
+    date: 'May 2026',
+  },
+  {
+    title: 'React JS: Build 6 Real-World React Apps with AI Integration',
+    issuer: 'Udemy',
+    platform: 'udemy',
+    date: 'Apr 2026',
+  },
+  {
+    title: 'Data Science I: Fundamentos para la Ciencia de Datos',
+    issuer: 'Coderhouse',
+    platform: 'coderhouse',
+    date: 'Sep 2026',
+  },
+  {
+    title: 'Claude Code 101',
+    issuer: 'Anthropic',
+    platform: 'anthropic',
+    date: 'Aug 2026',
+  },
+  {
+    title: 'AI Fluency: Framework & Foundations',
+    issuer: 'Anthropic',
+    platform: 'anthropic',
+    date: 'Jul 2026',
+  },
+  {
+    title: 'Introduction to AI Governance',
+    issuer: 'LinkedIn Learning',
+    platform: 'linkedin',
+    date: 'Jun 2026',
+  },
+  {
+    title: 'Introduction to Artificial Intelligence',
+    issuer: 'LinkedIn Learning',
+    platform: 'linkedin',
+    date: 'Jun 2026',
+  },
+  {
+    title: 'Fundamentals of Agentic AI: Business Implications and Ethical Insights',
+    issuer: 'LinkedIn Learning',
+    platform: 'linkedin',
+    date: 'Jun 2026',
+  },
+  {
+    title: 'Introduction to Prompt Engineering for Generative AI',
+    issuer: 'LinkedIn Learning',
+    platform: 'linkedin',
+    date: 'May 2026',
+  },
+  {
+    title: 'Top Ten AI Prompts',
+    issuer: 'LinkedIn Learning',
+    platform: 'linkedin',
+    date: 'May 2026',
+  },
+  {
     title: 'Aprende Gemini, la IA de Google',
     issuer: 'LinkedIn Learning',
     platform: 'linkedin',
@@ -12,12 +102,6 @@ export const certificates: Certificate[] = [
     issuer: 'LinkedIn Learning',
     platform: 'linkedin',
     date: 'May 2026',
-  },
-  {
-    title: 'React JS: Build 6 Real-World React Apps with AI Integration',
-    issuer: 'Udemy',
-    platform: 'udemy',
-    date: 'Apr 2026',
   },
   {
     title: 'Mastering GenAI: Fine-Tune & Adapt LLMs Effectively',
@@ -47,7 +131,7 @@ export const education: Degree[] = [
   },
   {
     title: 'Programming and AI Studies',
-    institution: 'Universidad Siglo XXI',
+    institution: 'Universidad Siglo XXI · 2 years of coursework',
     year: '2022',
   },
   {

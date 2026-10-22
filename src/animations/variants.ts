@@ -23,3 +23,8 @@ export const staggerFast: Variants = {
 }
 
 export const viewport = { once: true, margin: '-80px' } as const
+
+export const panelVariants: Variants = {
+  closed: { height: 0, opacity: 0 },
+  open: { height: 'auto', opacity: 1, transition: { duration: 0.35, ease } },
+}

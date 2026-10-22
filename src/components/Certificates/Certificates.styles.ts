@@ -88,6 +88,35 @@ export const List = styled.ul`
   flex-direction: column;
 `
 
+export const ExtraList = styled(motion.ul)`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+  & > li:first-child {
+    border-top: none;
+  }
+`
+
+export const ToggleButton = styled.button`
+  margin-top: 24px;
+  font-family: ${(p) => p.theme.fontMono};
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: ${(p) => p.theme.fg2};
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: ${(p) => p.theme.accent};
+  }
+
+  &:focus-visible {
+    outline: 1px solid ${(p) => p.theme.accent};
+    outline-offset: 4px;
+  }
+`
+
 export const CertItem = styled(motion.li)`
   display: grid;
   grid-template-columns: 1fr auto;

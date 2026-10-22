@@ -20,13 +20,14 @@ export const CONTACT_LINKS = [
   { label: 'github', value: 'github.com/alhanampi', href: 'https://github.com/alhanampi' },
   {
     label: 'linkedin',
-    value: 'linkedin.com/in/paminagoldenberg-thiery',
-    href: 'https://linkedin.com/in/paminagoldenberg-thiery',
+    value: 'linkedin.com/in/pamina-goldenberg-thiery',
+    href: 'https://www.linkedin.com/in/pamina-goldenberg-thiery/',
   },
 ] as const
 
 export const HERO_LINKS = [
   { label: 'github →', href: 'https://github.com/alhanampi' },
-  { label: 'linkedin →', href: 'https://linkedin.com/in/paminagoldenberg-thiery' },
+  { label: 'linkedin →', href: 'https://www.linkedin.com/in/pamina-goldenberg-thiery/' },
   { label: 'alhanampi@gmail.com →', href: 'mailto:alhanampi@gmail.com' },
+  { label: 'download CV ↓', href: '/Pamina_Goldenberg_Thiery_CV.pdf' },
 ] as const
